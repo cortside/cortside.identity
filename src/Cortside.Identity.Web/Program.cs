@@ -9,7 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("IdentityDataCo
 builder.Services.AddDbContext<IdentityDataContext>(options => options.UseSqlServer(connectionString));
 
 builder.Services.AddAuthorization();
-builder.Services.AddIdentityApiEndpoints<IdentityUser>(options =>
+builder.Services.AddIdentityApiEndpoints<User>(options =>
         options.SignIn.RequireConfirmedAccount = true
     )
     .AddEntityFrameworkStores<IdentityDataContext>()
